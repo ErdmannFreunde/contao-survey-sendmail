@@ -1,6 +1,6 @@
 <?php
 
-namespace Contao\SkeletonBundle\ContaoManager;
+namespace EuF\ContaoSurveySendmail\ContaoManager;
 
 use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
