@@ -1,0 +1,38 @@
+{
+  "name": "erdmannfreunde/contao-survey-sendmail",
+  "description": "",
+  "type": "contao-bundle",
+  "require": {
+    "php": "^5.6 || ^7.0",
+    "contao/core-bundle": "4.4.*",
+    "symfony/framework-bundle": "^3.3",
+    "hschottm/contao-survey": "dev-master",
+    "terminal42/notification_center": "^1.5"
+  },
+  "require-dev": {
+    "contao/manager-plugin": "^2.0"
+  },
+  "conflict": {
+    "contao/core": "*",
+    "contao/manager-plugin": "<2.0 || >=3.0"
+  },
+  "license": "LGPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Erdmann & Freunde",
+      "homepage": "https://erdmann-freunde.de"
+    },
+    {
+      "name": "Frank Mueller",
+      "email": "frank.mueller@linking-you.de"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "EuF\\ContaoSurveySendmail\\": "src/"
+    }
+  },
+  "extra" : {
+    "contao-manager-plugin": "EuF\\ContaoSurveySendmail\\ContaoManager\\Plugin"
+  }
+}
