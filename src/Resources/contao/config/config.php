@@ -1,21 +1,11 @@
 <?php
 
-use EuF\Model\SurveyQuestionsModel;
-use EuF\Model\SurveyResultsModel;
-
-/**
- * @package   survey_ce_sendmail
- * @author    Sebastian Buck
- * @license   LGPL
- * @copyright 2016 Erdmann & Freunde
- */
-
 // Hook registrieren
-$GLOBALS['TL_HOOKS']['surveyFinished'][] = array('EuF\SurveyFinishedHook', 'surveyFinished');
+$GLOBALS['TL_HOOKS']['surveyFinished'][] = array('EuF\ContaoSurveySendmail\Hooks\SurveyFinishedHook', 'surveyFinished');
 
 // Models registrieren
-//$GLOBALS['TL_MODELS'][\EuF\Model\SurveyQuestionsModel::getTable()]      = 'SurveyQuestionsModel';
-//$GLOBALS['TL_MODELS'][\EuF\Model\SurveyResultsModel::getTable()]      = 'SurveyResultsModel';
+$GLOBALS['TL_MODELS']['tl_survey_question'] = \EuF\ContaoSurveySendmail\Model\SurveyQuestionsModel::class;
+$GLOBALS['TL_MODELS']['tl_survey_result'] = \EuF\ContaoSurveySendmail\Model\SurveyResultsModel::class;
 
 // Eigener Benachrichtigungstyp für NotificationCenter
 $GLOBALS['NOTIFICATION_CENTER']['NOTIFICATION_TYPE']['survey_ce'] = array

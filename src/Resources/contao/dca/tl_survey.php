@@ -1,12 +1,5 @@
 <?php
 
-/**
- * @package   survey_ce_sendmail
- * @author    Sebastian Buck
- * @license   LGPL
- * @copyright 2016 Erdmann & Freunde
- */
-
 // Paletten anpassen: Alias Feld hinzufügen
 foreach ($GLOBALS['TL_DCA']['tl_survey']['palettes'] as $k => $palette) {
   if (!is_array($palette) && strpos($palette, "language")!==false) {
@@ -18,14 +11,12 @@ foreach ($GLOBALS['TL_DCA']['tl_survey']['palettes'] as $k => $palette) {
   }
 }
 
-
-
 // Feld für Notification
 $GLOBALS['TL_DCA']['tl_survey']['fields']['notification'] = array (
   'label'                     => &$GLOBALS['TL_LANG']['tl_survey']['notification'],
   'exclude'                   => true,
   'inputType'                 => 'select',
-  'options_callback'          => array('EuF\BackendHelper', 'getNotificationChoicesForSurvey'),
+  'options_callback'          => array('EuF\ContaoSurveySendmail\Backend\BackendHelper', 'getNotificationChoicesForSurvey'),
   'eval'                      => array('includeBlankOption'=>true, 'chosen'=>true, 'tl_class'=>'w50'),
   'sql'                       => "int(10) unsigned NOT NULL default '0'"
 );

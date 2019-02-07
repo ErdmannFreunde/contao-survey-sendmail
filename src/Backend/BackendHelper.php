@@ -1,18 +1,12 @@
 <?php
 
-/**
- * @package   survey_ce_sendmail
- * @author    Sebastian Buck
- * @license   LGPL
- * @copyright 2016 Erdmann & Freunde
- */
-
-namespace EuF;
+namespace EuF\ContaoSurveySendmail\Backend;
 
 use Contao\Backend;
 use Contao\DataContainer;
 use Contao\StringUtil;
 use Contao\Database;
+use EuF\ContaoSurveySendmail\Model\SurveyQuestionsModel;
 
 class BackendHelper extends Backend {
 
@@ -22,7 +16,7 @@ class BackendHelper extends Backend {
   public function addTokensToNC() {
 
     // Auslesen der Aliase
-    $objQuestions = Model\SurveyQuestionsModel::findAll();
+    $objQuestions = SurveyQuestionsModel::findAll();
 
     // allgemeine Umfrage-Token
     $arrQuestions[] = 'survey_name';
@@ -53,7 +47,7 @@ class BackendHelper extends Backend {
    *
    * @return string
    *
-   * @throws Exception
+   * @throws \Exception
    */
   public function generateQuestionAlias($varValue, DataContainer $dc)
   {
@@ -72,7 +66,7 @@ class BackendHelper extends Backend {
     // Check whether the news alias exists
     if ($objAlias->numRows > 1 && !$autoAlias)
     {
-      throw new Exception(sprintf($GLOBALS['TL_LANG']['ERR']['aliasExists'], $varValue));
+      throw new \Exception(sprintf($GLOBALS['TL_LANG']['ERR']['aliasExists'], $varValue));
     }
 
     // Add ID to alias

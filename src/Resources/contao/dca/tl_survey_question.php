@@ -1,13 +1,5 @@
 <?php
 
-/**
- * @package   survey_ce_sendmail
- * @author    Sebastian Buck
- * @license   LGPL
- * @copyright 2016 Erdmann & Freunde
- */
-
-
 // Paletten anpassen: Alias Feld hinzufügen
 foreach ($GLOBALS['TL_DCA']['tl_survey_question']['palettes'] as $k => $palette) {
   if (!is_array($palette) && strpos($palette, "title")!==false) {
@@ -28,7 +20,7 @@ $GLOBALS['TL_DCA']['tl_survey_question']['fields']['alias'] = array(
   'eval'                    => array('rgxp'=>'alias', 'unique'=>true, 'maxlength'=>128, 'tl_class'=>'w50'),
   'save_callback' => array
   (
-    array('EuF\BackendHelper', 'generateQuestionAlias')
+    array('EuF\ContaoSurveySendmail\Backend\BackendHelper', 'generateQuestionAlias')
   ),
   'sql'                     => "varchar(128) COLLATE utf8_bin NOT NULL default ''"
 );
