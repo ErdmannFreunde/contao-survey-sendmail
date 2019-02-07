@@ -1,4 +1,5 @@
 <?php
+
 namespace EuF\ContaoSurveySendmail\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;

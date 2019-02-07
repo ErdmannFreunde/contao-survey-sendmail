@@ -7,7 +7,7 @@ use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
 use EuF\ContaoSurveySendmail\ContaoSurveySendmailBundle;
-
+use Hschottm\SurveyBundle\Survey;
 
 class Plugin implements BundlePluginInterface {
 
@@ -18,7 +18,10 @@ class Plugin implements BundlePluginInterface {
     {
         return [
             BundleConfig::create(ContaoSurveySendmailBundle::class)
-                ->setLoadAfter([ContaoCoreBundle::class]),
+                ->setLoadAfter([ContaoCoreBundle::class])
+                ->setLoadAfter([Survey::class])
+                ->setLoadAfter(['notification_center'])
+            ,
         ];
     }
 
