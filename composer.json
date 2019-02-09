@@ -6,7 +6,7 @@
     "php": "^5.6 || ^7.0",
     "contao/core-bundle": "4.4.*",
     "symfony/framework-bundle": "^3.3",
-    "hschottm/contao-survey": "dev-master",
+    "linking-you/contao-survey": "dev-master",
     "terminal42/notification_center": "^1.5"
   },
   "require-dev": {
