@@ -1,6 +1,6 @@
 {
   "name": "erdmannfreunde/contao-survey-sendmail",
-  "description": "",
+  "description": "Extends the contao survey extension with a new notification center type to send survey results.",
   "type": "contao-bundle",
   "require": {
     "php": "^5.6 || ^7.0",
@@ -20,15 +20,18 @@
   "authors": [
     {
       "name": "Erdmann & Freunde",
-      "homepage": "https://erdmann-freunde.de"
+      "homepage": "https://erdmann-freunde.de",
+      "email": "moin@erdmann-freunde.de"
     },
     {
       "name": "Sebastian Buck",
-      "email": ""
+      "homepage": "https://bastibuck.de",
+      "email": "moin@erdmann-freunde.de"
     },
     {
       "name": "Frank Mueller",
-      "email": "frank.mueller@linking-you.de"
+      "email": "frank.mueller@linking-you.de",
+      "homepage": "https://www.linking-you.de"
     }
   ],
   "autoload": {
